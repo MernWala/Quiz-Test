@@ -1,28 +1,22 @@
 package miniproject.pkg1;
 
-import javax.swing.BorderFactory;
-import javax.swing.JOptionPane;
+import Admin.Rules;
 import com.connection.connect;
+import java.awt.Color;
+import javax.swing.JOptionPane;
 
 public class startPage extends javax.swing.JFrame {
-
+    // Test title
+    private final String testTitle = Rules.testName;
+    public String currEnroll;
+    
     public startPage() {
-        initComponents();
-        this.Login_TF_StudentName.setBorder(BorderFactory.createCompoundBorder(
-                this.Login_TF_StudentName.getBorder(), BorderFactory.createEmptyBorder(5, 5, 5, 5)
-        ));
-
-        this.Login_TF_TesName.setBorder(BorderFactory.createCompoundBorder(
-                this.Login_TF_TesName.getBorder(), BorderFactory.createEmptyBorder(0, 10, 0, 0)
-        ));
-
-        this.Login_TF_Enrollment.setBorder(BorderFactory.createCompoundBorder(
-                this.Login_TF_Enrollment.getBorder(), BorderFactory.createEmptyBorder(5, 5, 5, 5)
-        ));
-
-        this.Login_Btn_StartTest.setBorder(BorderFactory.createCompoundBorder(
-                this.Login_Btn_StartTest.getBorder(), BorderFactory.createEmptyBorder(2, 5, 2, 5)
-        ));
+        initComponents();        
+        utility.BorderSpacing(Login_TF_StudentName, 5, 5, 5, 5);
+        utility.BorderSpacing(Login_TF_TesName, 0, 10, 0, 0);
+        utility.BorderSpacing(Login_TF_Enrollment, 5, 5, 5, 5);        
+        utility.BorderSpacing(Login_Btn_StartTest, 2, 5, 2, 5);
+        Login_TF_TesName.setText(this.testTitle);
     }
 
     @SuppressWarnings("unchecked")
@@ -57,7 +51,6 @@ public class startPage extends javax.swing.JFrame {
         Login_TF_TesName.setFont(new java.awt.Font("HP Simplified", 0, 24)); // NOI18N
         Login_TF_TesName.setForeground(new java.awt.Color(255, 255, 255));
         Login_TF_TesName.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Login_TF_TesName.setText("Heading of form");
         Login_TF_TesName.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Login_TF_TesName.setName(""); // NOI18N
 
@@ -165,11 +158,20 @@ public class startPage extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(51, 51, 51));
 
         Login_Btn_StartTest.setBackground(new java.awt.Color(51, 51, 51));
+        Login_Btn_StartTest.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         Login_Btn_StartTest.setForeground(new java.awt.Color(255, 255, 255));
         Login_Btn_StartTest.setText("Start Test");
         Login_Btn_StartTest.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         Login_Btn_StartTest.setContentAreaFilled(false);
         Login_Btn_StartTest.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Login_Btn_StartTest.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Login_Btn_StartTestMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Login_Btn_StartTestMouseExited(evt);
+            }
+        });
         Login_Btn_StartTest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Login_Btn_StartTestActionPerformed(evt);
@@ -212,7 +214,7 @@ public class startPage extends javax.swing.JFrame {
                         .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(Login_TF_ResponseMess, javax.swing.GroupLayout.PREFERRED_SIZE, 898, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addContainerGap(296, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -242,7 +244,7 @@ public class startPage extends javax.swing.JFrame {
             .addGroup(Login_RegistrationFormLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(200, Short.MAX_VALUE))
+                .addContainerGap(336, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout LoginTopParentLayout = new javax.swing.GroupLayout(LoginTopParent);
@@ -292,22 +294,31 @@ public class startPage extends javax.swing.JFrame {
     }//GEN-LAST:event_Login_TF_EnrollmentActionPerformed
 
     private void Login_Btn_StartTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Login_Btn_StartTestActionPerformed
-        final String stuName = Login_TF_StudentName.getText();
+        final String stuName = Login_TF_StudentName.getText();  // Current Student tracked by StuEnroll number
         final String stuEnroll = Login_TF_Enrollment.getText();
 
         connect obj = new connect();
 
         if (!stuName.isEmpty() && !stuEnroll.isEmpty()) {
+            currEnroll = stuEnroll;
             int i = obj.registerStudent(stuName, stuEnroll);
-            if(i > 0){
-                Login_TF_ResponseMess.setText("Your test is being started. Best of Luck");
-            }else{
-                Login_TF_ResponseMess.setText("Somthing went wrong with server ..!");
+            if (i > 0) {
+                JOptionPane.showMessageDialog(this, "Your test is being started. Best of Luck");
+                this.setVisible(false);
+                new actualTest(testTitle).setVisible(true);
+            } else {
+                Login_TF_ResponseMess.setText("It Seems Like You Have Already Responded.");
             }
         }
-
-        
     }//GEN-LAST:event_Login_Btn_StartTestActionPerformed
+
+    private void Login_Btn_StartTestMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Login_Btn_StartTestMouseEntered
+        Login_Btn_StartTest.setForeground(new utility().hoverClr);
+    }//GEN-LAST:event_Login_Btn_StartTestMouseEntered
+
+    private void Login_Btn_StartTestMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Login_Btn_StartTestMouseExited
+        Login_Btn_StartTest.setForeground(Color.white);
+    }//GEN-LAST:event_Login_Btn_StartTestMouseExited
 
     public static void main(String args[]) {
         try {
@@ -317,27 +328,13 @@ public class startPage extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(startPage.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(startPage.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(startPage.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(startPage.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new startPage().setVisible(true);
-            }
+        
+        java.awt.EventQueue.invokeLater(() -> {
+            new startPage().setVisible(true);
         });
     }
 

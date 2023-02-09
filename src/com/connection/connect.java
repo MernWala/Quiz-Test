@@ -40,7 +40,6 @@ public class connect {
     }
 
     public static void main(String[] args) {
-        connect obj = new connect();
-        System.out.println(obj.registerStudent("Shivam Kumar Kashyap", "0103CS213D16"));
+        connect obj = new connect();        
     }
 }
