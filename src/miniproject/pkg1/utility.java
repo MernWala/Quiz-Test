@@ -91,23 +91,27 @@ public class utility extends miniproject.pkg1.startPage {
     public static String changeQuestionNo(int a) {
         return "Que " + a + ")";
     }
-    
-    public static String getValue_JRadio(JRadioButton a, JRadioButton b, JRadioButton c, JRadioButton d, JRadioButton e){
-        if(a.isSelected()){
+
+    public static String getValue_JRadio(JRadioButton a, JRadioButton b, JRadioButton c, JRadioButton d, JRadioButton e) {
+        if (a.isSelected()) {
             return "A";
-        }else if(b.isSelected()){
+        } else if (b.isSelected()) {
             return "B";
-        }else if(c.isSelected()){
+        } else if (c.isSelected()) {
             return "C";
-        }else if(d.isSelected()){
+        } else if (d.isSelected()) {
             return "D";
-        }else if(e.isSelected()){
+        } else if (e.isSelected()) {
             return "Y";
-        }else{
-            return "Z";
+        } else {
+            return "Blank";
         }
     }
-    
+
+    public static boolean isAnySelected(JRadioButton a, JRadioButton b, JRadioButton c, JRadioButton d, JRadioButton e) {
+        return a.isSelected() || b.isSelected() || c.isSelected() || d.isSelected() || e.isSelected();
+    }
+
 //    public static void main(String[] args) {
 //        getTableDataFromDB("PracticeSet1");
 //        System.out.println(option1 + " Size: "+option1.size());

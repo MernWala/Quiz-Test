@@ -15,9 +15,7 @@ public class actualTest extends javax.swing.JFrame {
         initComponents();
         utility.BorderSpacing(aT_HeadingSection, 0, 10, 0, 0);
         utility.BorderSpacing(aT_Btn_Next, 2, 5, 2, 5);
-        utility.BorderSpacing(aT_Btn_Confirm, 2, 5, 2, 5);
         aTest_TF_testName.setText(testTitle);
-        aT_Btn_Confirm.setEnabled(true);
         connect.createTable(Rules.genrateQuery_createTable(Rules.testNameAns, Rules.totalQuestion));
     }
 
@@ -37,23 +35,22 @@ public class actualTest extends javax.swing.JFrame {
         aT_Que_Block = new javax.swing.JPanel();
         aT_TA_ActualQuestion = new javax.swing.JTextArea();
         aT_OptionBlock = new javax.swing.JPanel();
-        aT_JB_OptionA = new javax.swing.JRadioButton();
-        aT_JB_OptionB = new javax.swing.JRadioButton();
-        aT_JB_OptionC = new javax.swing.JRadioButton();
-        aT_JB_OptionD = new javax.swing.JRadioButton();
-        aT_JB_Option_iDontKnow = new javax.swing.JRadioButton();
+        btn1 = new javax.swing.JRadioButton();
+        btn2 = new javax.swing.JRadioButton();
+        btn3 = new javax.swing.JRadioButton();
+        btn4 = new javax.swing.JRadioButton();
+        btn5 = new javax.swing.JRadioButton();
         aT_BottomSection = new javax.swing.JPanel();
         aT_NextPrevious_Btn = new javax.swing.JPanel();
-        aT_Btn_Confirm = new javax.swing.JButton();
         aT_Btn_Next = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         aT_TF_responseBox = new javax.swing.JTextField();
 
-        aT_BtnGrp_UserAns.add(aT_JB_OptionA);
-        aT_BtnGrp_UserAns.add(aT_JB_OptionB);
-        aT_BtnGrp_UserAns.add(aT_JB_OptionC);
-        aT_BtnGrp_UserAns.add(aT_JB_OptionD);
-        aT_BtnGrp_UserAns.add(aT_JB_Option_iDontKnow);
+        aT_BtnGrp_UserAns.add(btn1);
+        aT_BtnGrp_UserAns.add(btn2);
+        aT_BtnGrp_UserAns.add(btn3);
+        aT_BtnGrp_UserAns.add(btn4);
+        aT_BtnGrp_UserAns.add(btn5);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -146,28 +143,33 @@ public class actualTest extends javax.swing.JFrame {
 
         aT_OptionBlock.setBackground(new java.awt.Color(51, 51, 51));
 
-        aT_JB_OptionA.setBackground(new java.awt.Color(51, 51, 51));
-        aT_JB_OptionA.setFont(new java.awt.Font("HP Simplified", 0, 12)); // NOI18N
-        aT_JB_OptionA.setForeground(new java.awt.Color(255, 255, 255));
+        btn1.setBackground(new java.awt.Color(51, 51, 51));
+        btn1.setFont(new java.awt.Font("HP Simplified", 0, 12)); // NOI18N
+        btn1.setForeground(new java.awt.Color(255, 255, 255));
 
-        aT_JB_OptionB.setBackground(new java.awt.Color(51, 51, 51));
-        aT_JB_OptionB.setFont(new java.awt.Font("HP Simplified", 0, 12)); // NOI18N
-        aT_JB_OptionB.setForeground(new java.awt.Color(255, 255, 255));
-
-        aT_JB_OptionC.setBackground(new java.awt.Color(51, 51, 51));
-        aT_JB_OptionC.setFont(new java.awt.Font("HP Simplified", 0, 12)); // NOI18N
-        aT_JB_OptionC.setForeground(new java.awt.Color(255, 255, 255));
-
-        aT_JB_OptionD.setBackground(new java.awt.Color(51, 51, 51));
-        aT_JB_OptionD.setFont(new java.awt.Font("HP Simplified", 0, 12)); // NOI18N
-        aT_JB_OptionD.setForeground(new java.awt.Color(255, 255, 255));
-
-        aT_JB_Option_iDontKnow.setBackground(new java.awt.Color(51, 51, 51));
-        aT_JB_Option_iDontKnow.setFont(new java.awt.Font("HP Simplified", 0, 12)); // NOI18N
-        aT_JB_Option_iDontKnow.setForeground(new java.awt.Color(255, 255, 255));
-        aT_JB_Option_iDontKnow.addActionListener(new java.awt.event.ActionListener() {
+        btn2.setBackground(new java.awt.Color(51, 51, 51));
+        btn2.setFont(new java.awt.Font("HP Simplified", 0, 12)); // NOI18N
+        btn2.setForeground(new java.awt.Color(255, 255, 255));
+        btn2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aT_JB_Option_iDontKnowActionPerformed(evt);
+                btn2ActionPerformed(evt);
+            }
+        });
+
+        btn3.setBackground(new java.awt.Color(51, 51, 51));
+        btn3.setFont(new java.awt.Font("HP Simplified", 0, 12)); // NOI18N
+        btn3.setForeground(new java.awt.Color(255, 255, 255));
+
+        btn4.setBackground(new java.awt.Color(51, 51, 51));
+        btn4.setFont(new java.awt.Font("HP Simplified", 0, 12)); // NOI18N
+        btn4.setForeground(new java.awt.Color(255, 255, 255));
+
+        btn5.setBackground(new java.awt.Color(51, 51, 51));
+        btn5.setFont(new java.awt.Font("HP Simplified", 0, 12)); // NOI18N
+        btn5.setForeground(new java.awt.Color(255, 255, 255));
+        btn5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn5ActionPerformed(evt);
             }
         });
 
@@ -178,27 +180,26 @@ public class actualTest extends javax.swing.JFrame {
             .addGroup(aT_OptionBlockLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(aT_OptionBlockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(aT_JB_Option_iDontKnow, javax.swing.GroupLayout.DEFAULT_SIZE, 871, Short.MAX_VALUE)
-                    .addGroup(aT_OptionBlockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(aT_JB_OptionD, javax.swing.GroupLayout.DEFAULT_SIZE, 871, Short.MAX_VALUE)
-                        .addComponent(aT_JB_OptionC, javax.swing.GroupLayout.DEFAULT_SIZE, 871, Short.MAX_VALUE)
-                        .addComponent(aT_JB_OptionB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(aT_JB_OptionA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(btn5, javax.swing.GroupLayout.DEFAULT_SIZE, 871, Short.MAX_VALUE)
+                    .addComponent(btn4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 871, Short.MAX_VALUE)
+                    .addComponent(btn3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 871, Short.MAX_VALUE)
+                    .addComponent(btn2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(311, Short.MAX_VALUE))
         );
         aT_OptionBlockLayout.setVerticalGroup(
             aT_OptionBlockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(aT_OptionBlockLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(aT_JB_OptionA)
+                .addComponent(btn1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(aT_JB_OptionB)
+                .addComponent(btn2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(aT_JB_OptionC)
+                .addComponent(btn3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(aT_JB_OptionD)
+                .addComponent(btn4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(aT_JB_Option_iDontKnow)
+                .addComponent(btn5)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -249,29 +250,6 @@ public class actualTest extends javax.swing.JFrame {
 
         aT_NextPrevious_Btn.setBackground(new java.awt.Color(51, 51, 51));
 
-        aT_Btn_Confirm.setBackground(new java.awt.Color(51, 51, 51));
-        aT_Btn_Confirm.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
-        aT_Btn_Confirm.setForeground(new java.awt.Color(255, 255, 255));
-        aT_Btn_Confirm.setText("Confirm");
-        aT_Btn_Confirm.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        aT_Btn_Confirm.setContentAreaFilled(false);
-        aT_Btn_Confirm.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        aT_Btn_Confirm.setDefaultCapable(false);
-        aT_Btn_Confirm.setMinimumSize(new java.awt.Dimension(20, 100));
-        aT_Btn_Confirm.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                aT_Btn_ConfirmMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                aT_Btn_ConfirmMouseExited(evt);
-            }
-        });
-        aT_Btn_Confirm.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aT_Btn_ConfirmActionPerformed(evt);
-            }
-        });
-
         aT_Btn_Next.setBackground(new java.awt.Color(51, 51, 51));
         aT_Btn_Next.setFont(new java.awt.Font("HP Simplified", 0, 14)); // NOI18N
         aT_Btn_Next.setForeground(new java.awt.Color(255, 255, 255));
@@ -299,21 +277,17 @@ public class actualTest extends javax.swing.JFrame {
         aT_NextPrevious_Btn.setLayout(aT_NextPrevious_BtnLayout);
         aT_NextPrevious_BtnLayout.setHorizontalGroup(
             aT_NextPrevious_BtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, aT_NextPrevious_BtnLayout.createSequentialGroup()
+            .addGroup(aT_NextPrevious_BtnLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(aT_Btn_Confirm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(aT_Btn_Next, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
         aT_NextPrevious_BtnLayout.setVerticalGroup(
             aT_NextPrevious_BtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(aT_NextPrevious_BtnLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(aT_NextPrevious_BtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(aT_Btn_Next, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(aT_Btn_Confirm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, aT_NextPrevious_BtnLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(aT_Btn_Next, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout aT_BottomSectionLayout = new javax.swing.GroupLayout(aT_BottomSection);
@@ -321,15 +295,16 @@ public class actualTest extends javax.swing.JFrame {
         aT_BottomSectionLayout.setHorizontalGroup(
             aT_BottomSectionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(aT_BottomSectionLayout.createSequentialGroup()
-                .addGap(529, 529, 529)
+                .addContainerGap()
                 .addComponent(aT_NextPrevious_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         aT_BottomSectionLayout.setVerticalGroup(
             aT_BottomSectionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, aT_BottomSectionLayout.createSequentialGroup()
-                .addGap(0, 26, Short.MAX_VALUE)
-                .addComponent(aT_NextPrevious_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(aT_NextPrevious_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
@@ -381,9 +356,9 @@ public class actualTest extends javax.swing.JFrame {
                 .addComponent(aT_MidSection, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(aT_BottomSection, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(138, Short.MAX_VALUE))
+                .addContainerGap(133, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -400,23 +375,6 @@ public class actualTest extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void aT_Btn_ConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aT_Btn_ConfirmActionPerformed
-        if (StuAns_Index < stuAns.length) {
-            outputStr = utility.getValue_JRadio(aT_JB_OptionA, aT_JB_OptionB, aT_JB_OptionC, aT_JB_OptionD, aT_JB_Option_iDontKnow);
-            stuAns[StuAns_Index] = outputStr;
-            StuAns_Index++;
-            aT_BtnGrp_UserAns.clearSelection();
-        }
-    }//GEN-LAST:event_aT_Btn_ConfirmActionPerformed
-
-    private void aT_Btn_ConfirmMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aT_Btn_ConfirmMouseEntered
-        aT_Btn_Confirm.setForeground(new utility().hoverClr);
-    }//GEN-LAST:event_aT_Btn_ConfirmMouseEntered
-
-    private void aT_Btn_ConfirmMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aT_Btn_ConfirmMouseExited
-        aT_Btn_Confirm.setForeground(Color.white);
-    }//GEN-LAST:event_aT_Btn_ConfirmMouseExited
-
     private void aT_Btn_NextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aT_Btn_NextMouseEntered
         aT_Btn_Next.setForeground(new utility().hoverClr);
     }//GEN-LAST:event_aT_Btn_NextMouseEntered
@@ -426,13 +384,17 @@ public class actualTest extends javax.swing.JFrame {
     }//GEN-LAST:event_aT_Btn_NextMouseExited
 
     private void aT_Btn_NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aT_Btn_NextActionPerformed
-        aT_TF_responseBox.setText("Pass the Question");
-        if (utility.setTextToAllLablesComponents(aT_L_QuestionNum, aT_TA_ActualQuestion, aT_JB_OptionA, aT_JB_OptionB, aT_JB_OptionC, aT_JB_OptionD, currIndex, Rules.testName)) {
-            aT_Btn_Confirm.setEnabled(true);
-            if (!aT_JB_OptionA.isSelected() && !aT_JB_OptionB.isSelected() && !aT_JB_OptionC.isSelected() && !aT_JB_OptionC.isSelected() && !aT_JB_Option_iDontKnow.isSelected()) {
+        btn5.setText("Pass the Question");
+        if (utility.setTextToAllLablesComponents(aT_L_QuestionNum, aT_TA_ActualQuestion, btn1, btn2, btn3, btn4, currIndex, Rules.testName)) {
+            if (currIndex < stuAns.length){ //&& utility.isAnySelected(btn1, btn2, btn3, btn4, btn5)) {
+                outputStr = utility.getValue_JRadio(btn1, btn2, btn3, btn4, btn5);
+                stuAns[currIndex] = outputStr;
+                System.out.println(outputStr);
+                aT_BtnGrp_UserAns.clearSelection();
+            }
+            if (!btn1.isSelected() && !btn2.isSelected() && !btn3.isSelected() && !btn3.isSelected() && !btn5.isSelected()) {
                 aT_TF_responseBox.setText("You Have To Choose Any Of The Above Option !");
             }
-            currIndex++;
             aT_TF_responseBox.setText("");
         } else {
             JOptionPane.showMessageDialog(this, "Your Test is over.");
@@ -443,11 +405,16 @@ public class actualTest extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Problem with storing data");
             }
         }
+        currIndex++;
     }//GEN-LAST:event_aT_Btn_NextActionPerformed
 
-    private void aT_JB_Option_iDontKnowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aT_JB_Option_iDontKnowActionPerformed
+    private void btn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_aT_JB_Option_iDontKnowActionPerformed
+    }//GEN-LAST:event_btn5ActionPerformed
+
+    private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn2ActionPerformed
 
     public static void main(String args[]) {
         try {
@@ -469,14 +436,8 @@ public class actualTest extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel aT_BottomSection;
     private javax.swing.ButtonGroup aT_BtnGrp_UserAns;
-    private javax.swing.JButton aT_Btn_Confirm;
     private javax.swing.JButton aT_Btn_Next;
     private javax.swing.JPanel aT_HeadingSection;
-    private javax.swing.JRadioButton aT_JB_OptionA;
-    private javax.swing.JRadioButton aT_JB_OptionB;
-    private javax.swing.JRadioButton aT_JB_OptionC;
-    private javax.swing.JRadioButton aT_JB_OptionD;
-    private javax.swing.JRadioButton aT_JB_Option_iDontKnow;
     private javax.swing.JLabel aT_L_QuestionNum;
     private javax.swing.JPanel aT_MidSection;
     private javax.swing.JPanel aT_NextPrevious_Btn;
@@ -486,6 +447,11 @@ public class actualTest extends javax.swing.JFrame {
     private javax.swing.JTextArea aT_TA_ActualQuestion;
     private javax.swing.JTextField aT_TF_responseBox;
     private javax.swing.JTextField aTest_TF_testName;
+    private javax.swing.JRadioButton btn1;
+    private javax.swing.JRadioButton btn2;
+    private javax.swing.JRadioButton btn3;
+    private javax.swing.JRadioButton btn4;
+    private javax.swing.JRadioButton btn5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator1;
