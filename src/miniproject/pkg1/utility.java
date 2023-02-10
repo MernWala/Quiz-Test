@@ -92,7 +92,7 @@ public class utility extends miniproject.pkg1.startPage {
         return "Que " + a + ")";
     }
     
-    public static String getValue_JRadio(JRadioButton a, JRadioButton b, JRadioButton c, JRadioButton d){
+    public static String getValue_JRadio(JRadioButton a, JRadioButton b, JRadioButton c, JRadioButton d, JRadioButton e){
         if(a.isSelected()){
             return "A";
         }else if(b.isSelected()){
@@ -101,8 +101,10 @@ public class utility extends miniproject.pkg1.startPage {
             return "C";
         }else if(d.isSelected()){
             return "D";
+        }else if(e.isSelected()){
+            return "Y";
         }else{
-            return "Blank";
+            return "Z";
         }
     }
     

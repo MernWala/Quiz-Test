@@ -6,9 +6,8 @@ import java.awt.Color;
 import javax.swing.JOptionPane;
 
 public class startPage extends javax.swing.JFrame {
-    // Test title
     private final String testTitle = Rules.testName;
-    public String currEnroll;
+    public static String currEnroll;
     
     public startPage() {
         initComponents();        
@@ -286,19 +285,17 @@ public class startPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Login_TF_StudentNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Login_TF_StudentNameActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_Login_TF_StudentNameActionPerformed
 
     private void Login_TF_EnrollmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Login_TF_EnrollmentActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_Login_TF_EnrollmentActionPerformed
 
     private void Login_Btn_StartTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Login_Btn_StartTestActionPerformed
         final String stuName = Login_TF_StudentName.getText();  // Current Student tracked by StuEnroll number
         final String stuEnroll = Login_TF_Enrollment.getText();
-
         connect obj = new connect();
-
         if (!stuName.isEmpty() && !stuEnroll.isEmpty()) {
             currEnroll = stuEnroll;
             int i = obj.registerStudent(stuName, stuEnroll);
